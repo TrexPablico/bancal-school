@@ -28,24 +28,23 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const resources = {
   1: {
-    title: "Marq (formerly Lucidpress)",
-    title2: "What is Marq?(Formerly Lucidpress)",
+    title: "Tax Mapping Activities",
+    title2:
+      "Tax Mapping Activities, collaborative efforts by & beyween NIA Region 1 &  Assessor Aguilar",
     title3: "Discover more by watching this video.",
     description2:
       "Marq is the new name for Lucidpress, rebranded to better reflect its evolving capabilities as a brand templating platform. The core functionalities remain the same, but the rebranding to Marq emphasizes a broader scope in helping businesses maintain brand integrity while empowering teams to create content quickly and easily.",
     description:
       "A design and brand templating platform that allows users to create and manage marketing materials, brochures, flyers and social media graphics.",
     cover: image1,
-    video: "../assets/ResourceDetails/video1.mp4",
-    opener:
-      "Curious about Marq? Let’s dive into some quick questions to see what makes this design tool a fantastic choice for creating amazing graphics and documents!",
+    //video: "../assets/ResourceDetails/video1.mp4",
+    embedCode: `<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fweb.facebook.com%2F100064709975156%2Fvideos%2F412133091407708%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>`,
+    opener: "Things to know about Tax mapping",
     id: 1,
-    question: "Why did Lucidpress become Marq?",
-    question2: "Can I use Marq even if I'm not a designer?",
-    answer:
-      "Lucidpress changed its name to Marq because it wanted to show that it’s even better at helping you create and share your designs. It’s like getting a new superhero name!",
-    answer2:
-      "Yes! Marq is super easy to use, with simple tools that help you create cool designs without needing any design skills.",
+    question: "What is the purpose of taxmapping?",
+    question2: "Other purposes of tax mapping?",
+    answer: "It helps identification of affected lots",
+    answer2: "Identification of lot owners & Submition of documents",
   },
   2: {
     title: "Venngage",
@@ -280,6 +279,7 @@ const ResourceDetail = () => {
       <h1 className="text-2xl font-bold mb-4 mt-4 pt-4 text-center">
         {resource.title2}
       </h1>
+      {/* tanggal muna neto
       <div className="flex flex-col md:flex-row mt-20 px-10 mx-7 gap-y-8">
         <div className="md:w-1/2 w-full flex items-center justify-center">
           {resource.cover && (
@@ -304,7 +304,12 @@ const ResourceDetail = () => {
         <video controls width="700px">
           <source src={videoSrc} type="video/mp4" />
         </video>
-      </div>
+      </div> */}
+      <div
+        dangerouslySetInnerHTML={{ __html: resource.embedCode }}
+        className="player-wrapper mx-4 mt-20 flex object-center justify-center"
+      />
+
       <div className="w-89% m-auto max-w-[1400px] bg-gray-400 p-8 rounded-lg shadow-md mt-40">
         <h2 className="2xl mb-6 font-semibold">{resource.opener}</h2>
         <div className="mb-4 last:mb-0">
